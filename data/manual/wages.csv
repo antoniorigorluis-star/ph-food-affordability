@@ -1,0 +1,8 @@
+region_code,wage_order,effective_date,daily_wage,sector,source,verified
+NCR,NCR-21,2017-10-05,512,Non-agriculture,"NWPC wage order (PDF not yet in data/raw)",not yet checked
+NCR,NCR-22,2018-11-22,537,Non-agriculture,"NWPC wage order (PDF not yet in data/raw)",not yet checked
+NCR,NCR-23,2022-06-04,570,Non-agriculture,"NWPC wage order (PDF not yet in data/raw)",not yet checked
+NCR,NCR-24,2023-07-16,610,Non-agriculture,"NWPC wage order (PDF not yet in data/raw)",not yet checked
+NCR,NCR-25,2024-07-17,645,Non-agriculture,"NWPC wage order (PDF not yet in data/raw)",not yet checked
+NCR,NCR-26,2025-07-18,695,Non-agriculture,"Rate cited as the baseline in Wage Order NCR-28 (data/raw); effective date not yet checked",amount confirmed
+NCR,NCR-28,2026-09-26,755,Non-agriculture,"Wage Order NCR-28 PDF (data/raw)",confirmed

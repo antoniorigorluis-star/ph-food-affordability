@@ -1,0 +1,13 @@
+item_key,commodity,label,quantity,unit,why
+rice,"RICE, REGULAR-MILLED, 1 KG",Rice (regular-milled),10,kg,"Staple eaten at almost every meal; regular-milled is the cheapest common grade. About 0.3 kg per person per day."
+galunggong,"FRESH FISH, ROUND SCAD, GALUNGGONG, MEDIUM, 1 KG",Galunggong,1.5,kg,"The classic low-cost fish; a common benchmark of what poor households eat."
+tilapia,"FRESH FISH, TILAPIA, MEDIUM, 1 KG",Tilapia,1,kg,"Cheap farmed fish sold in every region."
+chicken,"FRESH CHICKEN, FULLY DRESSED, BROILER, 1 KG",Chicken (whole broiler),1.5,kg,"Most-eaten meat in the country."
+pork,"FRESH PORK, KASIM, 1 KG",Pork (kasim),1,kg,"Most common everyday pork cut."
+eggs,"FRESH EGG, CHICKEN, MEDIUM, 1 PC",Eggs (medium),12,pc,"Cheapest animal protein per serving."
+monggo,"MONGGO, GREEN, 1 KG",Monggo,0.5,kg,"Low-cost plant protein; a weekly ulam in many homes."
+cabbage,"CABBAGE, 1 KG",Cabbage,1,kg,"Everyday leafy vegetable for soups and sautés."
+eggplant,"EGGPLANT, LONG, PURPLE, 1 KG",Eggplant,1,kg,"Common vegetable for tortang talong, pinakbet and sinigang."
+tomato,"TOMATO, 1 KG",Tomato,1,kg,"Base for sautéed (gisa) dishes and side salads."
+onion,"ONION RED CREOLE (BERMUDA RED), 1 KG",Red onion,0.5,kg,"Basic cooking ingredient."
+garlic,"GARLIC, NATIVE, 1 KG",Garlic (native),0.25,kg,"Basic cooking ingredient."

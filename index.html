@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PH Food Affordability</title>
+<meta name="description" content="How many hours of minimum-wage work it takes to buy a week of basic food in each Philippine region.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Source+Sans+3:wght@400;600&display=swap">
+<style>
+  /* Layout: one centered column; header and tiles, full-width trend, two cards side by side, region table, notes. */
+  :root {
+    --bg: #f6f7f9; --panel: #ffffff; --fg: #17202b; --muted: #5b6676; --line: #dfe3e8;
+    --accent: #1f5fae; --grid: #eceff3; --axis: #b8c0cb; --ref: #9aa4b1; --other: #c3cad3;
+    --ok: #1a7f4b; --bad: #b4322a; --hover: #f0f3f7;
+    --serif: "Source Serif 4", Georgia, serif;
+    --sans: "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --radius: 8px;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #11161d; --panel: #181f28; --fg: #e6ebf1; --muted: #9aa6b5; --line: #2a3441;
+      --accent: #6aa5f0; --grid: #222b36; --axis: #465364; --ref: #6b7889; --other: #3a4655;
+      --ok: #5cc48b; --bad: #f07a70; --hover: #1f2833; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #11161d; --panel: #181f28; --fg: #e6ebf1; --muted: #9aa6b5; --line: #2a3441;
+    --accent: #6aa5f0; --grid: #222b36; --axis: #465364; --ref: #6b7889; --other: #3a4655;
+    --ok: #5cc48b; --bad: #f07a70; --hover: #1f2833; color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--sans); font-size: 15px; line-height: 1.45; font-variant-numeric: tabular-nums; }
+  .pf { display: grid; gap: 28px; max-width: 72rem; margin-inline: auto; padding-block: 32px 48px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  .pf b { font-weight: 600; }
+  .pf-head { display: grid; gap: 10px; }
+  .pf-kicker { margin: 0; font-size: 12px; color: var(--muted); letter-spacing: .06em; text-transform: uppercase; }
+  .pf-title { margin: 0; font-family: var(--serif); font-weight: 400; font-size: clamp(1.7rem, 4vw, 2.5rem); line-height: 1.15; text-wrap: balance; }
+  .pf-takeaway { margin: 0; font-size: 1.1rem; max-width: 62ch; }
+  .pf-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; }
+  .pf-controls label, .pf-asof { font-size: 13px; color: var(--muted); }
+  .pf-select { font: inherit; color: var(--fg); background-color: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 6px 10px; min-width: 14rem; }
+  .pf-select:focus-visible, .pf-sort:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  .pf-tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 12.5rem), 1fr)); gap: 14px; }
+  .pf-tile, .pf-card, .pf-details { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); }
+  .pf-tile { padding: 18px; display: grid; gap: 4px; align-content: start; }
+  .pf-tile-label, .pf-sub, .pf-note { font-size: 13px; color: var(--muted); }
+  .pf-big { font-family: var(--serif); font-size: 1.9rem; line-height: 1.1; }
+  .pf-big-note { font-family: var(--sans); font-size: 1rem; color: var(--muted); }
+  .pf-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 24rem), 1fr)); gap: 14px; }
+  .pf-card { padding: 20px; display: grid; gap: 8px; align-content: start; min-width: 0; }
+  .pf-card h2 { margin: 0; font-size: 1.05rem; font-weight: 600; }
+  .pf-note { margin: 0; }
+  .pf-chart { position: relative; min-height: 280px; }
+  .pf-chart svg { display: block; overflow: visible; }
+  .pf-tick { fill: var(--muted); font-size: 12px; font-family: var(--sans); }
+  .pf-endlabel { fill: var(--fg); font-size: 12px; font-weight: 600; font-family: var(--sans); }
+  .pf-empty { margin: 0; padding: 18px 0; color: var(--muted); }
+  .pf-tip { position: absolute; pointer-events: none; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: 0 4px 16px rgb(0 0 0 / .12); padding: 6px 10px; font-size: 12px; white-space: nowrap; z-index: 2; }
+  .pf-tip-date { color: var(--muted); }
+
+  .pf-items { display: grid; gap: 6px; min-height: 280px; align-content: start; }
+  .pf-item { display: grid; grid-template-columns: minmax(6rem, 9.5rem) 1fr auto; align-items: center; gap: 8px; font-size: 13px; }
+  .pf-item-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .pf-track { position: relative; height: 14px; }
+  .pf-bar { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 3px; background: var(--accent); }
+  .pf-mark { position: absolute; top: -3px; bottom: -3px; width: 2px; background: var(--fg); border-radius: 1px; }
+  .pf-item-val { text-align: right; white-space: nowrap; }
+  .pf-legend { display: flex; flex-wrap: wrap; gap: 14px; font-size: 12px; color: var(--muted); align-items: center; }
+  .pf-key-bar { display: inline-block; width: 14px; height: 10px; border-radius: 2px; vertical-align: middle; margin-right: 4px; background: var(--accent); }
+  .pf-key-mark { display: inline-block; width: 2px; height: 14px; background: var(--fg); vertical-align: middle; margin-right: 6px; }
+
+  .pf-tablewrap { overflow-x: auto; }
+  .pf-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .pf-table th { text-align: left; font-weight: 600; color: var(--muted); padding: 6px 10px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+  .pf-table td { padding: 6px 10px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+  .pf-table .num { text-align: right; }
+  .pf-regions tbody tr { cursor: pointer; }
+  .pf-regions tbody tr:hover td { background: var(--hover); }
+  .pf-sort { all: unset; cursor: pointer; }
+  .pf-cellbar { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 8px; min-width: 9rem; }
+  .pf-cellbar-track { height: 8px; position: relative; }
+  .pf-cellbar-fill { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 2px; background: var(--accent); }
+  .pf-chip { display: inline-block; padding: 1px 8px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); white-space: nowrap; }
+  .pf-ok { color: var(--ok); }
+  .pf-bad { color: var(--bad); }
+  .pf-sel td:first-child { box-shadow: inset 3px 0 0 var(--accent); font-weight: 600; }
+
+  .pf-details { padding: 14px 20px; }
+  .pf-details summary { cursor: pointer; font-weight: 600; }
+  .pf-details-body { display: grid; gap: 12px; padding-top: 14px; max-width: 70ch; }
+  .pf-details-body h3 { margin: 0; font-size: 1rem; }
+  .pf-details-body p, .pf-details-body ul { margin: 0; }
+  .pf-foot { font-size: 13px; color: var(--muted); }
+  .pf-foot a { color: var(--accent); }
+  .pf-error { padding: 16px; border: 1px solid var(--bad); border-radius: var(--radius); color: var(--bad); }
+  @media (max-width: 520px) { .pf-item { grid-template-columns: minmax(5rem, 7rem) 1fr auto; } }
+</style>
+</head>
+<body>
+<div class="pf">
+  <header class="pf-head">
+    <p class="pf-kicker">Philippine food affordability</p>
+    <h1 class="pf-title">How long must a minimum-wage worker work to buy a week of food?</h1>
+    <p class="pf-takeaway" data-when="wage">In <b data-f="region_name">—</b>, a week's basic food for a family of five cost <b data-f="basket_cost" data-fmt="peso">—</b> in <b data-f="month" data-fmt="month">—</b>. That is <b data-f="hours_needed" data-fmt="hours">—</b> hours of minimum-wage work, or <b data-f="days_needed" data-fmt="days">—</b> working days out of every week.</p>
+    <p class="pf-takeaway" data-when="nowage" hidden>In <b data-f="region_name">—</b>, a week's basic food for a family of five cost <b data-f="basket_cost" data-fmt="peso">—</b> in <b data-f="month" data-fmt="month">—</b>, ranked <b data-f="cost_rank" data-fmt="int">—</b> by cost among all regions. Hours of work will show once this region's wage orders are added.</p>
+    <div class="pf-controls">
+      <label for="pf-region">Region</label>
+      <select id="pf-region" class="pf-select"></select>
+      <span class="pf-asof">Latest PSA prices: <span data-f="month" data-fmt="month">—</span></span>
+    </div>
+  </header>
+
+  <div id="pf-error" class="pf-error" hidden>The data files could not be loaded. If you opened this file directly, run <code>python -m http.server</code> in the project folder and open http://localhost:8000 instead.</div>
+
+  <section class="pf-tiles" aria-label="Selected region, latest month">
+    <div class="pf-tile">
+      <span class="pf-tile-label">Weekly basket cost</span>
+      <span class="pf-big" data-f="basket_cost" data-fmt="peso">—</span>
+      <span class="pf-sub"><span data-f="cost_change_pct" data-fmt="pct" data-tone="up-bad">—</span> since Jan 2020</span>
+    </div>
+    <div class="pf-tile">
+      <span class="pf-tile-label">Daily minimum wage in force</span>
+      <span class="pf-big" data-when="wage" data-f="daily_wage" data-fmt="peso">—</span>
+      <span class="pf-sub" data-when="wage">Wage Order <span data-f="wage_order">—</span>, non-agriculture</span>
+      <span class="pf-big pf-big-note" data-when="nowage" hidden>Not added yet</span>
+      <span class="pf-sub" data-when="nowage" hidden>Wage orders for this region are still being collected.</span>
+    </div>
+    <div class="pf-tile">
+      <span class="pf-tile-label">Hours of work to buy the basket</span>
+      <span class="pf-big" data-when="wage"><span data-f="hours_needed" data-fmt="hours">—</span> h</span>
+      <span class="pf-sub" data-when="wage"><span data-f="days_needed" data-fmt="days">—</span> eight-hour days</span>
+      <span class="pf-big pf-big-note" data-when="nowage" hidden>Needs a wage</span>
+      <span class="pf-sub" data-when="nowage" hidden>Basket cost divided by the hourly minimum wage.</span>
+    </div>
+    <div class="pf-tile" data-when="trend">
+      <span class="pf-tile-label">Change in hours since Jan 2020</span>
+      <span class="pf-big"><span data-f="hours_change" data-fmt="hoursSigned" data-tone="up-bad">—</span> h</span>
+      <span class="pf-sub">From <span data-f="hours_2020" data-fmt="hours">—</span> h. Positive means food got harder to afford.</span>
+    </div>
+    <div class="pf-tile" data-when="newer" hidden>
+      <span class="pf-tile-label">At the newest wage</span>
+      <span class="pf-big"><span data-f="hours_at_newest_wage" data-fmt="hours">—</span> h</span>
+      <span class="pf-sub"><span data-f="newest_daily_wage" data-fmt="peso">—</span> a day under <span data-f="newest_wage_order">—</span>, in force from <span data-f="newest_wage_date" data-fmt="date">—</span>. Same basket.</span>
+    </div>
+  </section>
+
+  <section class="pf-card">
+    <h2>Hours of minimum-wage work needed, by month</h2>
+    <p class="pf-note">Basket cost ÷ (daily minimum wage ÷ 8). Dashed lines mark each wage increase. A rising line means food is outpacing wages.</p>
+    <div class="pf-chart" id="hours-chart" data-when="wage"></div>
+    <p class="pf-empty" data-when="nowage" hidden>No wage orders on file for this region yet, so hours can't be worked out. Basket cost is still shown below.</p>
+  </section>
+
+  <div class="pf-grid">
+    <section class="pf-card">
+      <h2>Weekly basket cost, every region</h2>
+      <p class="pf-note">Selected region highlighted; the grey lines are the other regions. Prices are PSA monthly retail averages.</p>
+      <div class="pf-chart" id="cost-chart"></div>
+    </section>
+    <section class="pf-card">
+      <h2>What the basket costs, item by item</h2>
+      <p class="pf-note">Each item's cost in the selected region's weekly basket, with its cost in Jan 2020 for comparison.</p>
+      <div class="pf-legend"><span><span class="pf-key-bar"></span><span data-f="month" data-fmt="month">—</span></span><span><span class="pf-key-mark"></span>Jan 2020</span><span>* price borrowed from the average of other regions</span></div>
+      <div class="pf-items" id="items-chart"></div>
+    </section>
+  </div>
+
+  <section class="pf-card">
+    <h2>All regions, latest month</h2>
+    <p class="pf-note">Click a row to see that region above. Click a column heading to sort.</p>
+    <div class="pf-tablewrap">
+      <table class="pf-table pf-regions">
+        <thead><tr>
+          <th aria-sort="none"><button class="pf-sort" data-sort="region_order">Region</button></th>
+          <th class="num" aria-sort="none"><button class="pf-sort" data-sort="basket_cost">Basket cost</button></th>
+          <th class="num" aria-sort="none"><button class="pf-sort" data-sort="cost_change_pct">Since Jan 2020</button></th>
+          <th class="num" aria-sort="none"><button class="pf-sort" data-sort="daily_wage">Daily wage</button></th>
+          <th class="num" aria-sort="none"><button class="pf-sort" data-sort="hours_needed">Hours needed</button></th>
+          <th class="num" aria-sort="none"><button class="pf-sort" data-sort="hours_at_newest_wage">At newest wage</button></th>
+        </tr></thead>
+        <tbody id="region-table"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <details class="pf-details">
+    <summary>How this is calculated, the basket, and the wage orders used</summary>
+    <div class="pf-details-body">
+      <h3>The measure</h3>
+      <p>Hours needed = weekly basket cost ÷ hourly minimum wage, where the hourly wage is the daily non-agriculture minimum wage ÷ 8. For each month, the wage used is the latest wage order in force on the 15th, since PSA prices are averages over the month.</p>
+      <h3>The basket</h3>
+      <p>An illustrative week of basic food for a family of five, built from items PSA prices in every region. It is not an official PSA food threshold.</p>
+      <div class="pf-tablewrap"><table class="pf-table"><thead><tr><th>Item</th><th class="num">Per week</th><th>Why it is in the basket</th></tr></thead><tbody id="basket-table"></tbody></table></div>
+      <h3>Wage orders used</h3>
+      <p>From NWPC regional wage orders. Wage Order NCR-27 is left out because court orders stopped it from taking effect.</p>
+      <div class="pf-tablewrap"><table class="pf-table"><thead><tr><th>Region</th><th>Order</th><th>Effective</th><th class="num">Daily wage</th><th>Checked</th></tr></thead><tbody id="wages-table"></tbody></table></div>
+      <h3>What is left out</h3>
+      <ul>
+        <li>Minimum wage is not actual take-home pay: many workers earn more, and informal workers often earn less.</li>
+        <li>The basket covers fresh food only. Cooking oil, sugar, milk, bread and canned goods are not in PSA's agricultural price files.</li>
+        <li>When PSA has no price for an item in a region (for example eggs and red onion in Central Visayas), the average of the other regions that month is used and marked with *.</li>
+        <li>Agriculture and small-business wage rates are lower than the non-agriculture rate used here, so hours needed are higher for those workers.</li>
+      </ul>
+    </div>
+  </details>
+
+  <p class="pf-foot">Data: PSA OpenStat retail prices of agricultural commodities; DOLE NWPC regional wage orders. Cleaned with Python (pandas), analyzed in SQLite. Code and SQL are in this repository.</p>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+(() => {
+  // ---------- data files (paths relative to this page) ----------
+  const FILES = {
+    summary: 'data/processed/region_summary.csv',
+    monthly: 'data/processed/basket_monthly.csv',
+    items: 'data/processed/basket_items.csv',
+    wages: 'data/manual/wages.csv',
+    basket: 'data/manual/basket.csv',
+  };
+
+  const num = (v) => (v === '' || v == null || Number.isNaN(+v)) ? null : +v;
+  const fmt = {
+    peso: (v) => '₱' + d3.format(',.0f')(v),
+    pct: (v) => (v > 0 ? '+' : '') + d3.format('.1f')(v) + '%',
+    hours: (v) => d3.format('.1f')(v),
+    hoursSigned: (v) => (v > 0 ? '+' : v < 0 ? '−' : '') + d3.format('.1f')(Math.abs(v)),
+    days: (v) => d3.format('.1f')(v),
+    int: (v) => d3.format(',')(v),
+    month: (v) => d3.utcFormat('%b %Y')(new Date(v)),
+    date: (v) => d3.utcFormat('%-d %b %Y')(new Date(v)),
+    text: (v) => String(v),
+  };
+  const css = (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+
+  const state = { region: 'NCR', sort: { key: 'region_order', dir: 1 }, data: null };
+  try { const h = decodeURIComponent(location.hash.slice(1)); if (h) state.region = h; } catch (e) { /* ignore */ }
+
+  const row = () => state.data.summary.find((r) => r.region_code === state.region);
+
+  // ---------- small helpers ----------
+  const measure = (svg, cls, texts) => {
+    const t = svg.append('text').attr('class', cls);
+    let w = 0;
+    texts.forEach((s) => { t.text(s); w = Math.max(w, t.node().getComputedTextLength()); });
+    t.remove();
+    return w;
+  };
+  const tooltip = (el) => {
+    const tip = document.createElement('div');
+    tip.className = 'pf-tip';
+    tip.hidden = true;
+    el.append(tip);
+    return {
+      show(lines, px, py) {
+        tip.replaceChildren(...lines.map(([text, cls]) => {
+          const d = document.createElement('div');
+          if (cls) d.className = cls;
+          d.textContent = text;
+          return d;
+        }));
+        tip.hidden = false;
+        const w = tip.offsetWidth, h = tip.offsetHeight;
+        let left = px + 12;
+        if (left + w > el.clientWidth) left = px - w - 12;
+        tip.style.left = Math.max(0, left) + 'px';
+        tip.style.top = Math.max(0, py - h - 8) + 'px';
+      },
+      hide() { tip.hidden = true; },
+    };
+  };
+  const td = (cls, text) => { const c = document.createElement('td'); if (cls) c.className = cls; if (text != null) c.textContent = text; return c; };
+
+  // ---------- text values and show/hide ----------
+  function renderText() {
+    const r = row();
+    document.querySelectorAll('[data-f]').forEach((el) => {
+      const f = el.dataset.fmt;
+      const raw = r ? r[el.dataset.f] : null;
+      const isText = !f || f === 'month' || f === 'date';
+      const v = isText ? (raw === '' || raw == null ? null : raw) : num(raw);
+      el.textContent = v == null ? '—' : fmt[f || 'text'](v);
+      el.style.color = (el.dataset.tone === 'up-bad' && v != null && v !== 0) ? (v > 0 ? 'var(--bad)' : 'var(--ok)') : '';
+    });
+    const hasWage = !!r && num(r.daily_wage) != null;
+    const show = {
+      wage: hasWage,
+      nowage: !hasWage,
+      trend: !!r && num(r.hours_change) != null,
+      newer: !!r && !!r.newest_wage_order && r.newest_wage_order !== r.wage_order,
+    };
+    document.querySelectorAll('[data-when]').forEach((el) => { el.hidden = !show[el.dataset.when]; });
+  }
+
+  function renderSelect() {
+    const sel = document.getElementById('pf-region');
+    const rows = state.data.summary.slice().sort((a, b) => num(a.region_order) - num(b.region_order));
+    const group = (label, list) => {
+      const og = document.createElement('optgroup');
+      og.label = label;
+      list.forEach((r) => og.append(new Option(r.region_name, r.region_code)));
+      return og;
+    };
+    const withWage = rows.filter((r) => num(r.newest_daily_wage) != null);
+    const without = rows.filter((r) => num(r.newest_daily_wage) == null);
+    sel.replaceChildren(...[withWage.length && group('With wage data', withWage), without.length && group('Prices only, wage not added yet', without)].filter(Boolean));
+    sel.value = state.region;
+    sel.onchange = () => setRegion(sel.value);
+  }
+
+  // ---------- chart: hours over time ----------
+  function renderHours() {
+    const el = document.getElementById('hours-chart');
+    el.replaceChildren();
+    if (el.hidden) return;
+    const code = state.region;
+    const rows = state.data.monthly
+      .filter((r) => r.region_code === code && num(r.hours_needed) != null)
+      .map((r) => ({ month: new Date(r.month), hours: num(r.hours_needed), cost: num(r.basket_cost), wage: num(r.daily_wage), order: r.wage_order }))
+      .sort((a, b) => a.month - b.month);
+    if (!rows.length) return;
+
+    const W = el.clientWidth || 640, H = 280;
+    const svg = d3.select(el).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`)
+      .attr('role', 'img').attr('aria-label', 'Hours of minimum-wage work needed to buy the weekly basket, by month');
+    const end = d3.utcMonth.offset(rows[rows.length - 1].month, 1);
+    const [lo, hi] = d3.extent(rows, (d) => d.hours);
+    const y = d3.scaleLinear([Math.max(0, lo - (hi - lo) * 0.25), hi + (hi - lo) * 0.15], [H - 26, 40]).nice();
+    const yTicks = y.ticks(5);
+    const last = rows[rows.length - 1];
+    const endText = fmt.hours(last.hours) + ' h';
+    const m = { top: 40, bottom: 26, left: measure(svg, 'pf-tick', yTicks.map(fmt.hours)) + 10, right: measure(svg, 'pf-endlabel', [endText]) + 14 };
+    const x = d3.scaleUtc([rows[0].month, end], [m.left, W - m.right]);
+
+    svg.append('g').selectAll('line').data(yTicks).join('line')
+      .attr('x1', m.left).attr('x2', W - m.right).attr('y1', y).attr('y2', y).attr('stroke', 'var(--grid)');
+    svg.append('g').selectAll('text').data(yTicks).join('text').attr('class', 'pf-tick')
+      .attr('x', m.left - 8).attr('y', y).attr('dy', '0.32em').attr('text-anchor', 'end').text(fmt.hours);
+    svg.append('g').selectAll('text').data(d3.utcYear.every(W < 520 ? 2 : 1).range(rows[0].month, end)).join('text').attr('class', 'pf-tick')
+      .attr('x', x).attr('y', H - 6).attr('text-anchor', 'middle').text(d3.utcFormat('%Y'));
+    svg.append('line').attr('x1', m.left).attr('x2', W - m.right).attr('y1', H - m.bottom).attr('y2', H - m.bottom).attr('stroke', 'var(--axis)');
+
+    // wage increases inside the time range
+    const [d0, d1] = x.domain();
+    const orders = state.data.wages
+      .filter((w) => w.region_code === code)
+      .map((w) => ({ date: new Date(w.effective_date), wage: num(w.daily_wage) }))
+      .filter((w) => w.date > d0 && w.date <= d1)
+      .sort((a, b) => a.date - b.date);
+    let prevRight = -Infinity, level = 0;
+    orders.forEach((w) => {
+      const px = x(w.date);
+      svg.append('line').attr('x1', px).attr('x2', px).attr('y1', m.top - 4).attr('y2', H - m.bottom)
+        .attr('stroke', 'var(--ref)').attr('stroke-dasharray', '3 3');
+      const label = fmt.peso(w.wage);
+      const lw = measure(svg, 'pf-tick', [label]);
+      const anchor = px + lw / 2 > W ? 'end' : 'middle';
+      const left = anchor === 'end' ? px - lw : px - lw / 2;
+      level = left < prevRight + 6 ? (level + 1) % 2 : 0;
+      svg.append('text').attr('class', 'pf-tick').attr('x', px).attr('y', m.top - 10 - level * 14).attr('text-anchor', anchor).text(label);
+      prevRight = anchor === 'end' ? px : px + lw / 2;
+    });
+
+    const color = css('--accent');
+    const grad = svg.append('defs').append('linearGradient').attr('id', 'pf-grad').attr('x1', 0).attr('x2', 0).attr('y1', 0).attr('y2', 1);
+    [[0, .26], [.25, .16], [.5, .08], [.75, .03], [1, 0]].forEach(([o, a]) =>
+      grad.append('stop').attr('offset', o).attr('stop-color', color).attr('stop-opacity', a));
+    svg.append('path').datum(rows).attr('fill', 'url(#pf-grad)')
+      .attr('d', d3.area().x((d) => x(d.month)).y0(H - m.bottom).y1((d) => y(d.hours)));
+    svg.append('path').datum(rows).attr('fill', 'none').attr('stroke', color).attr('stroke-width', 2)
+      .attr('stroke-linejoin', 'round').attr('stroke-linecap', 'round')
+      .attr('d', d3.line().x((d) => x(d.month)).y((d) => y(d.hours)));
+    svg.append('circle').attr('cx', x(last.month)).attr('cy', y(last.hours)).attr('r', 3.5).attr('fill', color);
+    svg.append('text').attr('class', 'pf-endlabel').attr('x', x(last.month) + 8).attr('y', y(last.hours)).attr('dy', '0.32em').text(endText);
+
+    const tip = tooltip(el);
+    const rule = svg.append('line').attr('stroke', 'var(--axis)').attr('y1', m.top).attr('y2', H - m.bottom).attr('opacity', 0);
+    const dot = svg.append('circle').attr('r', 4).attr('fill', color).attr('opacity', 0);
+    const bis = d3.bisector((d) => d.month).center;
+    svg.append('rect').attr('x', m.left).attr('y', m.top).attr('width', W - m.left - m.right).attr('height', H - m.top - m.bottom)
+      .attr('fill', 'transparent')
+      .on('pointermove', (event) => {
+        const d = rows[bis(rows, x.invert(d3.pointer(event)[0]))];
+        rule.attr('x1', x(d.month)).attr('x2', x(d.month)).attr('opacity', 1);
+        dot.attr('cx', x(d.month)).attr('cy', y(d.hours)).attr('opacity', 1);
+        const s = el.clientWidth / W;
+        tip.show([
+          [d3.utcFormat('%B %Y')(d.month), 'pf-tip-date'],
+          [fmt.hours(d.hours) + ' hours of work'],
+          ['Basket ' + fmt.peso(d.cost) + ' · wage ' + fmt.peso(d.wage) + ' (' + d.order + ')'],
+        ], x(d.month) * s, y(d.hours) * s);
+      })
+      .on('pointerleave', () => { tip.hide(); rule.attr('opacity', 0); dot.attr('opacity', 0); });
+  }
+
+  // ---------- chart: basket cost, all regions ----------
+  function renderCost() {
+    const el = document.getElementById('cost-chart');
+    el.replaceChildren();
+    const code = state.region;
+    const all = state.data.monthly.map((r) => ({ code: r.region_code, name: r.region_name, month: new Date(r.month), cost: num(r.basket_cost) }));
+    const byRegion = d3.groups(all, (d) => d.code).map(([k, v]) => [k, v.sort((a, b) => a.month - b.month)]);
+    const found = byRegion.find(([k]) => k === code);
+    if (!found) return;
+    const sel = found[1];
+
+    const W = el.clientWidth || 480, H = 280;
+    const svg = d3.select(el).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`)
+      .attr('role', 'img').attr('aria-label', 'Weekly basket cost by month for every region');
+    const months = d3.extent(all, (d) => d.month);
+    const y = d3.scaleLinear([d3.min(all, (d) => d.cost) * 0.95, d3.max(all, (d) => d.cost) * 1.02], [H - 26, 14]).nice();
+    const yTicks = y.ticks(5);
+    const last = sel[sel.length - 1];
+    const endText = fmt.peso(last.cost);
+    const m = { top: 14, bottom: 26, left: measure(svg, 'pf-tick', yTicks.map(fmt.peso)) + 10, right: measure(svg, 'pf-endlabel', [endText]) + 14 };
+    const x = d3.scaleUtc(months, [m.left, W - m.right]);
+
+    svg.append('g').selectAll('line').data(yTicks).join('line')
+      .attr('x1', m.left).attr('x2', W - m.right).attr('y1', y).attr('y2', y).attr('stroke', 'var(--grid)');
+    svg.append('g').selectAll('text').data(yTicks).join('text').attr('class', 'pf-tick')
+      .attr('x', m.left - 8).attr('y', y).attr('dy', '0.32em').attr('text-anchor', 'end').text(fmt.peso);
+    svg.append('g').selectAll('text').data(d3.utcYear.every(W < 520 ? 2 : 1).range(months[0], d3.utcMonth.offset(months[1], 1))).join('text').attr('class', 'pf-tick')
+      .attr('x', x).attr('y', H - 6).attr('text-anchor', 'middle').text(d3.utcFormat(W < 420 ? "'%y" : '%Y'));
+
+    const line = d3.line().x((d) => x(d.month)).y((d) => y(d.cost));
+    svg.append('g').selectAll('path').data(byRegion.filter(([k]) => k !== code)).join('path')
+      .attr('fill', 'none').attr('stroke', 'var(--other)').attr('stroke-width', 1).attr('stroke-linejoin', 'round').attr('d', ([, v]) => line(v));
+    const color = css('--accent');
+    svg.append('path').datum(sel).attr('fill', 'none').attr('stroke', color).attr('stroke-width', 2.25)
+      .attr('stroke-linejoin', 'round').attr('stroke-linecap', 'round').attr('d', line);
+    svg.append('circle').attr('cx', x(last.month)).attr('cy', y(last.cost)).attr('r', 3.5).attr('fill', color);
+    svg.append('text').attr('class', 'pf-endlabel').attr('x', x(last.month) + 8).attr('y', y(last.cost)).attr('dy', '0.32em').text(endText);
+
+    const tip = tooltip(el);
+    const rule = svg.append('line').attr('stroke', 'var(--axis)').attr('y1', m.top).attr('y2', H - m.bottom).attr('opacity', 0);
+    const dot = svg.append('circle').attr('r', 4).attr('fill', color).attr('opacity', 0);
+    const bis = d3.bisector((d) => d.month).center;
+    svg.append('rect').attr('x', m.left).attr('y', m.top).attr('width', W - m.left - m.right).attr('height', H - m.top - m.bottom)
+      .attr('fill', 'transparent')
+      .on('pointermove', (event) => {
+        const d = sel[bis(sel, x.invert(d3.pointer(event)[0]))];
+        const same = all.filter((r) => +r.month === +d.month);
+        const hiR = d3.greatest(same, (r) => r.cost), loR = d3.least(same, (r) => r.cost);
+        const rank = same.filter((r) => r.cost > d.cost).length + 1;
+        rule.attr('x1', x(d.month)).attr('x2', x(d.month)).attr('opacity', 1);
+        dot.attr('cx', x(d.month)).attr('cy', y(d.cost)).attr('opacity', 1);
+        const s = el.clientWidth / W;
+        tip.show([
+          [d3.utcFormat('%B %Y')(d.month), 'pf-tip-date'],
+          [d.name + ': ' + fmt.peso(d.cost) + ' (rank ' + rank + ' of ' + same.length + ')'],
+          ['Highest ' + hiR.name + ' ' + fmt.peso(hiR.cost)],
+          ['Lowest ' + loR.name + ' ' + fmt.peso(loR.cost)],
+        ], x(d.month) * s, y(d.cost) * s);
+      })
+      .on('pointerleave', () => { tip.hide(); rule.attr('opacity', 0); dot.attr('opacity', 0); });
+  }
+
+  // ---------- item bars ----------
+  function renderItems() {
+    const el = document.getElementById('items-chart');
+    const rows = state.data.items.filter((r) => r.region_code === state.region);
+    const base = new Map(rows.filter((r) => r.period === 'jan_2020').map((r) => [r.item_key, num(r.item_cost)]));
+    const items = rows.filter((r) => r.period === 'latest').map((r) => ({
+      label: r.label, cost: num(r.item_cost), qty: num(r.quantity), unit: r.unit, price: num(r.price),
+      filled: r.is_filled === '1', then: base.get(r.item_key),
+    })).sort((a, b) => b.cost - a.cost);
+    const max = d3.max(items, (d) => Math.max(d.cost, d.then || 0)) || 1;
+    el.replaceChildren(...items.map((d) => {
+      const row = document.createElement('div'); row.className = 'pf-item';
+      const name = document.createElement('span'); name.className = 'pf-item-name';
+      name.textContent = d.label + (d.filled ? ' *' : '');
+      name.title = d3.format('~g')(d.qty) + ' ' + d.unit + ' at ' + fmt.peso(d.price) + ' per ' + d.unit;
+      const track = document.createElement('div'); track.className = 'pf-track';
+      const bar = document.createElement('div'); bar.className = 'pf-bar'; bar.style.width = (100 * d.cost / max) + '%';
+      track.append(bar);
+      if (d.then != null) {
+        const mark = document.createElement('div'); mark.className = 'pf-mark';
+        mark.style.left = `calc(${100 * d.then / max}% - 1px)`;
+        track.append(mark);
+      }
+      const val = document.createElement('span'); val.className = 'pf-item-val'; val.textContent = fmt.peso(d.cost) + ' ';
+      if (d.then) {
+        const pct = 100 * (d.cost - d.then) / d.then;
+        const ch = document.createElement('span'); ch.className = pct > 0 ? 'pf-bad' : 'pf-ok'; ch.textContent = fmt.pct(pct);
+        val.append(ch);
+      }
+      row.append(name, track, val);
+      return row;
+    }));
+  }
+
+  // ---------- region table ----------
+  function renderTable() {
+    const tbody = document.getElementById('region-table');
+    const { key, dir } = state.sort;
+    const rows = state.data.summary.slice().sort((a, b) => {
+      const va = num(a[key]), vb = num(b[key]);
+      if (va == null && vb == null) return num(a.region_order) - num(b.region_order);
+      if (va == null) return 1;
+      if (vb == null) return -1;
+      return (va - vb) * dir;
+    });
+    const maxCost = d3.max(rows, (r) => num(r.basket_cost));
+    const maxHours = d3.max(rows, (r) => Math.max(num(r.hours_needed) || 0, num(r.hours_at_newest_wage) || 0)) || 1;
+    const barCell = (value, max, text) => {
+      const c = td('num');
+      const wrap = document.createElement('div'); wrap.className = 'pf-cellbar';
+      const track = document.createElement('div'); track.className = 'pf-cellbar-track';
+      const fill = document.createElement('div'); fill.className = 'pf-cellbar-fill'; fill.style.width = (100 * value / max) + '%';
+      track.append(fill);
+      const t = document.createElement('span'); t.textContent = text;
+      wrap.append(track, t); c.append(wrap);
+      return c;
+    };
+    const chip = (text) => { const c = td('num'); const s = document.createElement('span'); s.className = 'pf-chip'; s.textContent = text; c.append(s); return c; };
+    tbody.replaceChildren(...rows.map((r) => {
+      const tr = document.createElement('tr');
+      tr.dataset.key = r.region_code;
+      if (r.region_code === state.region) tr.className = 'pf-sel';
+      const cost = num(r.basket_cost), pct = num(r.cost_change_pct), wage = num(r.daily_wage);
+      const hours = num(r.hours_needed), newest = num(r.hours_at_newest_wage);
+      tr.append(
+        td('', r.region_name),
+        barCell(cost, maxCost, fmt.peso(cost)),
+        td('num ' + (pct == null ? '' : pct > 0 ? 'pf-bad' : 'pf-ok'), pct == null ? '—' : fmt.pct(pct)),
+        wage == null ? chip('Not added') : td('num', fmt.peso(wage)),
+        hours == null ? chip('Needs wage') : barCell(hours, maxHours, fmt.hours(hours) + ' h'),
+        newest == null ? chip('Needs wage') : td('num', fmt.hours(newest) + ' h'),
+      );
+      return tr;
+    }));
+  }
+
+  function renderReference() {
+    document.getElementById('basket-table').replaceChildren(...state.data.basket.map((r) => {
+      const tr = document.createElement('tr');
+      tr.append(td('', r.label), td('num', d3.format('~g')(num(r.quantity)) + ' ' + r.unit), td('', r.why));
+      return tr;
+    }));
+    const wages = state.data.wages.slice().sort((a, b) => a.region_code.localeCompare(b.region_code) || b.effective_date.localeCompare(a.effective_date));
+    document.getElementById('wages-table').replaceChildren(...wages.map((r) => {
+      const tr = document.createElement('tr');
+      tr.append(td('', r.region_code), td('', r.wage_order), td('', fmt.date(r.effective_date)), td('num', fmt.peso(num(r.daily_wage))), td('', r.verified));
+      return tr;
+    }));
+  }
+
+  function renderAll() {
+    renderText();
+    document.getElementById('pf-region').value = state.region;
+    renderHours();
+    renderCost();
+    renderItems();
+    renderTable();
+  }
+
+  function setRegion(code) {
+    state.region = code;
+    history.replaceState(null, '', '#' + encodeURIComponent(code));
+    renderAll();
+  }
+
+  // ---------- events ----------
+  document.getElementById('region-table').addEventListener('click', (event) => {
+    const tr = event.target.closest('tr[data-key]');
+    if (tr) setRegion(tr.dataset.key);
+  });
+  document.querySelectorAll('.pf-sort').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const key = btn.dataset.sort;
+      state.sort = { key, dir: state.sort.key === key ? -state.sort.dir : (key === 'region_order' ? 1 : -1) };
+      document.querySelectorAll('.pf-sort').forEach((b) => {
+        b.closest('th').setAttribute('aria-sort', b.dataset.sort === state.sort.key ? (state.sort.dir > 0 ? 'ascending' : 'descending') : 'none');
+      });
+      renderTable();
+    });
+  });
+  let resizeTimer;
+  window.addEventListener('resize', () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(() => state.data && renderAll(), 150); });
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => state.data && renderAll());
+
+  // ---------- load ----------
+  Promise.all(Object.entries(FILES).map(([k, path]) => d3.csv(path).then((rows) => [k, rows])))
+    .then((pairs) => {
+      state.data = Object.fromEntries(pairs);
+      if (!state.data.summary.some((r) => r.region_code === state.region)) state.region = 'NCR';
+      renderSelect();
+      renderReference();
+      renderAll();
+    })
+    .catch(() => { document.getElementById('pf-error').hidden = false; });
+})();
+</script>
+</body>
+</html>

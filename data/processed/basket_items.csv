@@ -1,0 +1,433 @@
+region_code,region_name,region_order,period,month,item_key,label,quantity,unit,price,item_cost,is_filled
+NCR,NCR,1,jan_2020,2020-01-01,cabbage,Cabbage,1.0,kg,63.14,63.14,0
+NCR,NCR,1,jan_2020,2020-01-01,chicken,Chicken (whole broiler),1.5,kg,166.58,249.87,0
+NCR,NCR,1,jan_2020,2020-01-01,eggplant,Eggplant,1.0,kg,76.83,76.83,0
+NCR,NCR,1,jan_2020,2020-01-01,eggs,Eggs (medium),12.0,pc,7.17,86.04,0
+NCR,NCR,1,jan_2020,2020-01-01,galunggong,Galunggong,1.5,kg,243.13,364.69,0
+NCR,NCR,1,jan_2020,2020-01-01,garlic,Garlic (native),0.25,kg,256.35,64.09,0
+NCR,NCR,1,jan_2020,2020-01-01,monggo,Monggo,0.5,kg,90.8,45.4,0
+NCR,NCR,1,jan_2020,2020-01-01,onion,Red onion,0.5,kg,196.87,98.44,0
+NCR,NCR,1,jan_2020,2020-01-01,pork,Pork (kasim),1.0,kg,288.03,288.03,0
+NCR,NCR,1,jan_2020,2020-01-01,rice,Rice (regular-milled),10.0,kg,35.8,358.0,0
+NCR,NCR,1,jan_2020,2020-01-01,tilapia,Tilapia,1.0,kg,130.11,130.11,0
+NCR,NCR,1,jan_2020,2020-01-01,tomato,Tomato,1.0,kg,61.93,61.93,0
+NCR,NCR,1,latest,2026-09-01,cabbage,Cabbage,1.0,kg,185.26,185.26,0
+NCR,NCR,1,latest,2026-09-01,chicken,Chicken (whole broiler),1.5,kg,200.07,300.11,0
+NCR,NCR,1,latest,2026-09-01,eggplant,Eggplant,1.0,kg,156.24,156.24,0
+NCR,NCR,1,latest,2026-09-01,eggs,Eggs (medium),12.0,pc,8.51,102.12,0
+NCR,NCR,1,latest,2026-09-01,galunggong,Galunggong,1.5,kg,307.69,461.53,0
+NCR,NCR,1,latest,2026-09-01,garlic,Garlic (native),0.25,kg,320.13,80.03,0
+NCR,NCR,1,latest,2026-09-01,monggo,Monggo,0.5,kg,151.99,76.0,0
+NCR,NCR,1,latest,2026-09-01,onion,Red onion,0.5,kg,122.32,61.16,0
+NCR,NCR,1,latest,2026-09-01,pork,Pork (kasim),1.0,kg,336.42,336.42,0
+NCR,NCR,1,latest,2026-09-01,rice,Rice (regular-milled),10.0,kg,46.58,465.8,0
+NCR,NCR,1,latest,2026-09-01,tilapia,Tilapia,1.0,kg,162.28,162.28,0
+NCR,NCR,1,latest,2026-09-01,tomato,Tomato,1.0,kg,122.53,122.53,0
+CAR,Cordillera (CAR),2,jan_2020,2020-01-01,cabbage,Cabbage,1.0,kg,44.3,44.3,0
+CAR,Cordillera (CAR),2,jan_2020,2020-01-01,chicken,Chicken (whole broiler),1.5,kg,176.24,264.36,0
+CAR,Cordillera (CAR),2,jan_2020,2020-01-01,eggplant,Eggplant,1.0,kg,73.02,73.02,0
+CAR,Cordillera (CAR),2,jan_2020,2020-01-01,eggs,Eggs (medium),12.0,pc,6.86,82.32,0
+CAR,Cordillera (CAR),2,jan_2020,2020-01-01,galunggong,Galunggong,1.5,kg,176.67,265.0,0
+CAR,Cordillera (CAR),2,jan_2020,2020-01-01,garlic,Garlic (native),0.25,kg,154.94,38.73,0
+CAR,Cordillera (CAR),2,jan_2020,2020-01-01,monggo,Monggo,0.5,kg,107.65,53.83,0
+CAR,Cordillera (CAR),2,jan_2020,2020-01-01,onion,Red onion,0.5,kg,140.7,70.35,0
+CAR,Cordillera (CAR),2,jan_2020,2020-01-01,pork,Pork (kasim),1.0,kg,253.47,253.47,0
+CAR,Cordillera (CAR),2,jan_2020,2020-01-01,rice,Rice (regular-milled),10.0,kg,38.92,389.2,0
+CAR,Cordillera (CAR),2,jan_2020,2020-01-01,tilapia,Tilapia,1.0,kg,135.79,135.79,0
+CAR,Cordillera (CAR),2,jan_2020,2020-01-01,tomato,Tomato,1.0,kg,53.33,53.33,0
+CAR,Cordillera (CAR),2,latest,2026-09-01,cabbage,Cabbage,1.0,kg,79.38,79.38,0
+CAR,Cordillera (CAR),2,latest,2026-09-01,chicken,Chicken (whole broiler),1.5,kg,228.09,342.13,0
+CAR,Cordillera (CAR),2,latest,2026-09-01,eggplant,Eggplant,1.0,kg,110.96,110.96,0
+CAR,Cordillera (CAR),2,latest,2026-09-01,eggs,Eggs (medium),12.0,pc,9.3,111.6,0
+CAR,Cordillera (CAR),2,latest,2026-09-01,galunggong,Galunggong,1.5,kg,253.19,379.78,0
+CAR,Cordillera (CAR),2,latest,2026-09-01,garlic,Garlic (native),0.25,kg,176.0,44.0,0
+CAR,Cordillera (CAR),2,latest,2026-09-01,monggo,Monggo,0.5,kg,108.21,54.1,0
+CAR,Cordillera (CAR),2,latest,2026-09-01,onion,Red onion,0.5,kg,137.15,68.58,0
+CAR,Cordillera (CAR),2,latest,2026-09-01,pork,Pork (kasim),1.0,kg,332.54,332.54,0
+CAR,Cordillera (CAR),2,latest,2026-09-01,rice,Rice (regular-milled),10.0,kg,49.73,497.3,0
+CAR,Cordillera (CAR),2,latest,2026-09-01,tilapia,Tilapia,1.0,kg,176.12,176.12,0
+CAR,Cordillera (CAR),2,latest,2026-09-01,tomato,Tomato,1.0,kg,84.0,84.0,0
+I,Ilocos,3,jan_2020,2020-01-01,cabbage,Cabbage,1.0,kg,36.09,36.09,0
+I,Ilocos,3,jan_2020,2020-01-01,chicken,Chicken (whole broiler),1.5,kg,176.71,265.06,0
+I,Ilocos,3,jan_2020,2020-01-01,eggplant,Eggplant,1.0,kg,60.95,60.95,0
+I,Ilocos,3,jan_2020,2020-01-01,eggs,Eggs (medium),12.0,pc,5.95,71.4,0
+I,Ilocos,3,jan_2020,2020-01-01,galunggong,Galunggong,1.5,kg,179.71,269.56,0
+I,Ilocos,3,jan_2020,2020-01-01,garlic,Garlic (native),0.25,kg,183.6,45.9,0
+I,Ilocos,3,jan_2020,2020-01-01,monggo,Monggo,0.5,kg,92.73,46.37,0
+I,Ilocos,3,jan_2020,2020-01-01,onion,Red onion,0.5,kg,168.53,84.27,0
+I,Ilocos,3,jan_2020,2020-01-01,pork,Pork (kasim),1.0,kg,243.39,243.39,0
+I,Ilocos,3,jan_2020,2020-01-01,rice,Rice (regular-milled),10.0,kg,36.54,365.4,0
+I,Ilocos,3,jan_2020,2020-01-01,tilapia,Tilapia,1.0,kg,123.05,123.05,0
+I,Ilocos,3,jan_2020,2020-01-01,tomato,Tomato,1.0,kg,44.35,44.35,0
+I,Ilocos,3,latest,2026-09-01,cabbage,Cabbage,1.0,kg,115.63,115.63,0
+I,Ilocos,3,latest,2026-09-01,chicken,Chicken (whole broiler),1.5,kg,228.53,342.8,0
+I,Ilocos,3,latest,2026-09-01,eggplant,Eggplant,1.0,kg,131.19,131.19,0
+I,Ilocos,3,latest,2026-09-01,eggs,Eggs (medium),12.0,pc,8.38,100.56,0
+I,Ilocos,3,latest,2026-09-01,galunggong,Galunggong,1.5,kg,258.44,387.66,0
+I,Ilocos,3,latest,2026-09-01,garlic,Garlic (native),0.25,kg,179.53,44.88,0
+I,Ilocos,3,latest,2026-09-01,monggo,Monggo,0.5,kg,114.83,57.41,0
+I,Ilocos,3,latest,2026-09-01,onion,Red onion,0.5,kg,117.33,58.66,0
+I,Ilocos,3,latest,2026-09-01,pork,Pork (kasim),1.0,kg,329.06,329.06,0
+I,Ilocos,3,latest,2026-09-01,rice,Rice (regular-milled),10.0,kg,46.18,461.8,0
+I,Ilocos,3,latest,2026-09-01,tilapia,Tilapia,1.0,kg,165.94,165.94,0
+I,Ilocos,3,latest,2026-09-01,tomato,Tomato,1.0,kg,87.81,87.81,0
+II,Cagayan Valley,4,jan_2020,2020-01-01,cabbage,Cabbage,1.0,kg,57.65,57.65,0
+II,Cagayan Valley,4,jan_2020,2020-01-01,chicken,Chicken (whole broiler),1.5,kg,181.15,271.73,0
+II,Cagayan Valley,4,jan_2020,2020-01-01,eggplant,Eggplant,1.0,kg,83.37,83.37,0
+II,Cagayan Valley,4,jan_2020,2020-01-01,eggs,Eggs (medium),12.0,pc,7.74,92.88,0
+II,Cagayan Valley,4,jan_2020,2020-01-01,galunggong,Galunggong,1.5,kg,205.37,308.06,0
+II,Cagayan Valley,4,jan_2020,2020-01-01,garlic,Garlic (native),0.25,kg,126.49,31.62,0
+II,Cagayan Valley,4,jan_2020,2020-01-01,monggo,Monggo,0.5,kg,81.44,40.72,0
+II,Cagayan Valley,4,jan_2020,2020-01-01,onion,Red onion,0.5,kg,155.87,77.94,0
+II,Cagayan Valley,4,jan_2020,2020-01-01,pork,Pork (kasim),1.0,kg,242.68,242.68,0
+II,Cagayan Valley,4,jan_2020,2020-01-01,rice,Rice (regular-milled),10.0,kg,34.52,345.2,0
+II,Cagayan Valley,4,jan_2020,2020-01-01,tilapia,Tilapia,1.0,kg,133.58,133.58,0
+II,Cagayan Valley,4,jan_2020,2020-01-01,tomato,Tomato,1.0,kg,66.27,66.27,0
+II,Cagayan Valley,4,latest,2026-09-01,cabbage,Cabbage,1.0,kg,118.38,118.38,0
+II,Cagayan Valley,4,latest,2026-09-01,chicken,Chicken (whole broiler),1.5,kg,222.9,334.35,0
+II,Cagayan Valley,4,latest,2026-09-01,eggplant,Eggplant,1.0,kg,92.91,92.91,0
+II,Cagayan Valley,4,latest,2026-09-01,eggs,Eggs (medium),12.0,pc,9.7,116.4,0
+II,Cagayan Valley,4,latest,2026-09-01,galunggong,Galunggong,1.5,kg,263.68,395.52,0
+II,Cagayan Valley,4,latest,2026-09-01,garlic,Garlic (native),0.25,kg,171.25,42.81,0
+II,Cagayan Valley,4,latest,2026-09-01,monggo,Monggo,0.5,kg,143.75,71.88,0
+II,Cagayan Valley,4,latest,2026-09-01,onion,Red onion,0.5,kg,158.05,79.03,0
+II,Cagayan Valley,4,latest,2026-09-01,pork,Pork (kasim),1.0,kg,290.59,290.59,0
+II,Cagayan Valley,4,latest,2026-09-01,rice,Rice (regular-milled),10.0,kg,44.56,445.6,0
+II,Cagayan Valley,4,latest,2026-09-01,tilapia,Tilapia,1.0,kg,168.75,168.75,0
+II,Cagayan Valley,4,latest,2026-09-01,tomato,Tomato,1.0,kg,112.36,112.36,0
+III,Central Luzon,5,jan_2020,2020-01-01,cabbage,Cabbage,1.0,kg,73.47,73.47,0
+III,Central Luzon,5,jan_2020,2020-01-01,chicken,Chicken (whole broiler),1.5,kg,166.49,249.74,0
+III,Central Luzon,5,jan_2020,2020-01-01,eggplant,Eggplant,1.0,kg,86.51,86.51,0
+III,Central Luzon,5,jan_2020,2020-01-01,eggs,Eggs (medium),12.0,pc,6.98,83.76,0
+III,Central Luzon,5,jan_2020,2020-01-01,galunggong,Galunggong,1.5,kg,202.64,303.96,0
+III,Central Luzon,5,jan_2020,2020-01-01,garlic,Garlic (native),0.25,kg,165.37,41.34,0
+III,Central Luzon,5,jan_2020,2020-01-01,monggo,Monggo,0.5,kg,97.6,48.8,0
+III,Central Luzon,5,jan_2020,2020-01-01,onion,Red onion,0.5,kg,187.47,93.73,0
+III,Central Luzon,5,jan_2020,2020-01-01,pork,Pork (kasim),1.0,kg,311.47,311.47,0
+III,Central Luzon,5,jan_2020,2020-01-01,rice,Rice (regular-milled),10.0,kg,36.24,362.4,0
+III,Central Luzon,5,jan_2020,2020-01-01,tilapia,Tilapia,1.0,kg,125.63,125.63,0
+III,Central Luzon,5,jan_2020,2020-01-01,tomato,Tomato,1.0,kg,55.63,55.63,0
+III,Central Luzon,5,latest,2026-09-01,cabbage,Cabbage,1.0,kg,118.07,118.07,0
+III,Central Luzon,5,latest,2026-09-01,chicken,Chicken (whole broiler),1.5,kg,202.29,303.44,0
+III,Central Luzon,5,latest,2026-09-01,eggplant,Eggplant,1.0,kg,149.85,149.85,0
+III,Central Luzon,5,latest,2026-09-01,eggs,Eggs (medium),12.0,pc,8.6,103.2,0
+III,Central Luzon,5,latest,2026-09-01,galunggong,Galunggong,1.5,kg,293.86,440.79,0
+III,Central Luzon,5,latest,2026-09-01,garlic,Garlic (native),0.25,kg,183.85,45.96,0
+III,Central Luzon,5,latest,2026-09-01,monggo,Monggo,0.5,kg,139.04,69.52,0
+III,Central Luzon,5,latest,2026-09-01,onion,Red onion,0.5,kg,117.14,58.57,0
+III,Central Luzon,5,latest,2026-09-01,pork,Pork (kasim),1.0,kg,345.53,345.53,0
+III,Central Luzon,5,latest,2026-09-01,rice,Rice (regular-milled),10.0,kg,48.91,489.1,0
+III,Central Luzon,5,latest,2026-09-01,tilapia,Tilapia,1.0,kg,151.98,151.98,0
+III,Central Luzon,5,latest,2026-09-01,tomato,Tomato,1.0,kg,106.83,106.83,0
+IV-A,CALABARZON,6,jan_2020,2020-01-01,cabbage,Cabbage,1.0,kg,75.45,75.45,0
+IV-A,CALABARZON,6,jan_2020,2020-01-01,chicken,Chicken (whole broiler),1.5,kg,173.29,259.94,0
+IV-A,CALABARZON,6,jan_2020,2020-01-01,eggplant,Eggplant,1.0,kg,70.53,70.53,0
+IV-A,CALABARZON,6,jan_2020,2020-01-01,eggs,Eggs (medium),12.0,pc,6.8,81.6,0
+IV-A,CALABARZON,6,jan_2020,2020-01-01,galunggong,Galunggong,1.5,kg,232.51,348.76,0
+IV-A,CALABARZON,6,jan_2020,2020-01-01,garlic,Garlic (native),0.25,kg,241.67,60.42,0
+IV-A,CALABARZON,6,jan_2020,2020-01-01,monggo,Monggo,0.5,kg,89.91,44.95,1
+IV-A,CALABARZON,6,jan_2020,2020-01-01,onion,Red onion,0.5,kg,158.7,79.35,0
+IV-A,CALABARZON,6,jan_2020,2020-01-01,pork,Pork (kasim),1.0,kg,292.83,292.83,0
+IV-A,CALABARZON,6,jan_2020,2020-01-01,rice,Rice (regular-milled),10.0,kg,38.42,384.2,0
+IV-A,CALABARZON,6,jan_2020,2020-01-01,tilapia,Tilapia,1.0,kg,126.38,126.38,0
+IV-A,CALABARZON,6,jan_2020,2020-01-01,tomato,Tomato,1.0,kg,64.33,64.33,0
+IV-A,CALABARZON,6,latest,2026-09-01,cabbage,Cabbage,1.0,kg,134.02,134.02,0
+IV-A,CALABARZON,6,latest,2026-09-01,chicken,Chicken (whole broiler),1.5,kg,215.26,322.89,0
+IV-A,CALABARZON,6,latest,2026-09-01,eggplant,Eggplant,1.0,kg,141.45,141.45,0
+IV-A,CALABARZON,6,latest,2026-09-01,eggs,Eggs (medium),12.0,pc,8.22,98.64,0
+IV-A,CALABARZON,6,latest,2026-09-01,galunggong,Galunggong,1.5,kg,291.43,437.14,0
+IV-A,CALABARZON,6,latest,2026-09-01,garlic,Garlic (native),0.25,kg,149.58,37.4,0
+IV-A,CALABARZON,6,latest,2026-09-01,monggo,Monggo,0.5,kg,123.58,61.79,1
+IV-A,CALABARZON,6,latest,2026-09-01,onion,Red onion,0.5,kg,115.49,57.74,0
+IV-A,CALABARZON,6,latest,2026-09-01,pork,Pork (kasim),1.0,kg,334.93,334.93,0
+IV-A,CALABARZON,6,latest,2026-09-01,rice,Rice (regular-milled),10.0,kg,48.79,487.9,0
+IV-A,CALABARZON,6,latest,2026-09-01,tilapia,Tilapia,1.0,kg,154.01,154.01,0
+IV-A,CALABARZON,6,latest,2026-09-01,tomato,Tomato,1.0,kg,104.04,104.04,0
+MIMAROPA,MIMAROPA,7,jan_2020,2020-01-01,cabbage,Cabbage,1.0,kg,102.17,102.17,0
+MIMAROPA,MIMAROPA,7,jan_2020,2020-01-01,chicken,Chicken (whole broiler),1.5,kg,175.48,263.22,0
+MIMAROPA,MIMAROPA,7,jan_2020,2020-01-01,eggplant,Eggplant,1.0,kg,108.37,108.37,0
+MIMAROPA,MIMAROPA,7,jan_2020,2020-01-01,eggs,Eggs (medium),12.0,pc,7.67,92.04,0
+MIMAROPA,MIMAROPA,7,jan_2020,2020-01-01,galunggong,Galunggong,1.5,kg,157.76,236.64,0
+MIMAROPA,MIMAROPA,7,jan_2020,2020-01-01,garlic,Garlic (native),0.25,kg,175.14,43.78,0
+MIMAROPA,MIMAROPA,7,jan_2020,2020-01-01,monggo,Monggo,0.5,kg,85.31,42.66,0
+MIMAROPA,MIMAROPA,7,jan_2020,2020-01-01,onion,Red onion,0.5,kg,205.44,102.72,0
+MIMAROPA,MIMAROPA,7,jan_2020,2020-01-01,pork,Pork (kasim),1.0,kg,226.12,226.12,0
+MIMAROPA,MIMAROPA,7,jan_2020,2020-01-01,rice,Rice (regular-milled),10.0,kg,37.19,371.9,0
+MIMAROPA,MIMAROPA,7,jan_2020,2020-01-01,tilapia,Tilapia,1.0,kg,137.67,137.67,0
+MIMAROPA,MIMAROPA,7,jan_2020,2020-01-01,tomato,Tomato,1.0,kg,133.96,133.96,0
+MIMAROPA,MIMAROPA,7,latest,2026-09-01,cabbage,Cabbage,1.0,kg,156.38,156.38,0
+MIMAROPA,MIMAROPA,7,latest,2026-09-01,chicken,Chicken (whole broiler),1.5,kg,229.11,343.67,0
+MIMAROPA,MIMAROPA,7,latest,2026-09-01,eggplant,Eggplant,1.0,kg,127.38,127.38,0
+MIMAROPA,MIMAROPA,7,latest,2026-09-01,eggs,Eggs (medium),12.0,pc,9.22,110.64,0
+MIMAROPA,MIMAROPA,7,latest,2026-09-01,galunggong,Galunggong,1.5,kg,214.54,321.81,0
+MIMAROPA,MIMAROPA,7,latest,2026-09-01,garlic,Garlic (native),0.25,kg,168.33,42.08,0
+MIMAROPA,MIMAROPA,7,latest,2026-09-01,monggo,Monggo,0.5,kg,128.93,64.47,0
+MIMAROPA,MIMAROPA,7,latest,2026-09-01,onion,Red onion,0.5,kg,142.76,71.38,0
+MIMAROPA,MIMAROPA,7,latest,2026-09-01,pork,Pork (kasim),1.0,kg,354.5,354.5,0
+MIMAROPA,MIMAROPA,7,latest,2026-09-01,rice,Rice (regular-milled),10.0,kg,48.59,485.9,0
+MIMAROPA,MIMAROPA,7,latest,2026-09-01,tilapia,Tilapia,1.0,kg,174.17,174.17,0
+MIMAROPA,MIMAROPA,7,latest,2026-09-01,tomato,Tomato,1.0,kg,124.67,124.67,0
+V,Bicol,8,jan_2020,2020-01-01,cabbage,Cabbage,1.0,kg,98.5,98.5,0
+V,Bicol,8,jan_2020,2020-01-01,chicken,Chicken (whole broiler),1.5,kg,171.23,256.84,0
+V,Bicol,8,jan_2020,2020-01-01,eggplant,Eggplant,1.0,kg,103.99,103.99,0
+V,Bicol,8,jan_2020,2020-01-01,eggs,Eggs (medium),12.0,pc,7.08,84.96,0
+V,Bicol,8,jan_2020,2020-01-01,galunggong,Galunggong,1.5,kg,191.25,286.88,0
+V,Bicol,8,jan_2020,2020-01-01,garlic,Garlic (native),0.25,kg,160.1,40.02,0
+V,Bicol,8,jan_2020,2020-01-01,monggo,Monggo,0.5,kg,96.23,48.12,0
+V,Bicol,8,jan_2020,2020-01-01,onion,Red onion,0.5,kg,194.04,97.02,0
+V,Bicol,8,jan_2020,2020-01-01,pork,Pork (kasim),1.0,kg,248.31,248.31,0
+V,Bicol,8,jan_2020,2020-01-01,rice,Rice (regular-milled),10.0,kg,37.0,370.0,0
+V,Bicol,8,jan_2020,2020-01-01,tilapia,Tilapia,1.0,kg,147.02,147.02,0
+V,Bicol,8,jan_2020,2020-01-01,tomato,Tomato,1.0,kg,94.09,94.09,0
+V,Bicol,8,latest,2026-09-01,cabbage,Cabbage,1.0,kg,143.43,143.43,0
+V,Bicol,8,latest,2026-09-01,chicken,Chicken (whole broiler),1.5,kg,206.25,309.38,0
+V,Bicol,8,latest,2026-09-01,eggplant,Eggplant,1.0,kg,112.74,112.74,0
+V,Bicol,8,latest,2026-09-01,eggs,Eggs (medium),12.0,pc,9.02,108.24,0
+V,Bicol,8,latest,2026-09-01,galunggong,Galunggong,1.5,kg,241.61,362.42,0
+V,Bicol,8,latest,2026-09-01,garlic,Garlic (native),0.25,kg,168.47,42.12,0
+V,Bicol,8,latest,2026-09-01,monggo,Monggo,0.5,kg,137.4,68.7,0
+V,Bicol,8,latest,2026-09-01,onion,Red onion,0.5,kg,143.43,71.72,0
+V,Bicol,8,latest,2026-09-01,pork,Pork (kasim),1.0,kg,304.47,304.47,0
+V,Bicol,8,latest,2026-09-01,rice,Rice (regular-milled),10.0,kg,50.96,509.6,0
+V,Bicol,8,latest,2026-09-01,tilapia,Tilapia,1.0,kg,190.83,190.83,0
+V,Bicol,8,latest,2026-09-01,tomato,Tomato,1.0,kg,117.0,117.0,0
+VI,Western Visayas,9,jan_2020,2020-01-01,cabbage,Cabbage,1.0,kg,95.76,95.76,0
+VI,Western Visayas,9,jan_2020,2020-01-01,chicken,Chicken (whole broiler),1.5,kg,158.61,237.92,0
+VI,Western Visayas,9,jan_2020,2020-01-01,eggplant,Eggplant,1.0,kg,131.79,131.79,0
+VI,Western Visayas,9,jan_2020,2020-01-01,eggs,Eggs (medium),12.0,pc,7.24,86.88,0
+VI,Western Visayas,9,jan_2020,2020-01-01,galunggong,Galunggong,1.5,kg,196.27,294.41,0
+VI,Western Visayas,9,jan_2020,2020-01-01,garlic,Garlic (native),0.25,kg,143.74,35.94,0
+VI,Western Visayas,9,jan_2020,2020-01-01,monggo,Monggo,0.5,kg,100.0,50.0,0
+VI,Western Visayas,9,jan_2020,2020-01-01,onion,Red onion,0.5,kg,252.32,126.16,0
+VI,Western Visayas,9,jan_2020,2020-01-01,pork,Pork (kasim),1.0,kg,217.5,217.5,0
+VI,Western Visayas,9,jan_2020,2020-01-01,rice,Rice (regular-milled),10.0,kg,38.96,389.6,0
+VI,Western Visayas,9,jan_2020,2020-01-01,tilapia,Tilapia,1.0,kg,143.49,143.49,0
+VI,Western Visayas,9,jan_2020,2020-01-01,tomato,Tomato,1.0,kg,88.22,88.22,0
+VI,Western Visayas,9,latest,2026-09-01,cabbage,Cabbage,1.0,kg,153.34,153.34,0
+VI,Western Visayas,9,latest,2026-09-01,chicken,Chicken (whole broiler),1.5,kg,201.61,302.42,0
+VI,Western Visayas,9,latest,2026-09-01,eggplant,Eggplant,1.0,kg,124.13,124.13,0
+VI,Western Visayas,9,latest,2026-09-01,eggs,Eggs (medium),12.0,pc,9.12,109.44,0
+VI,Western Visayas,9,latest,2026-09-01,galunggong,Galunggong,1.5,kg,244.88,367.32,0
+VI,Western Visayas,9,latest,2026-09-01,garlic,Garlic (native),0.25,kg,156.31,39.08,0
+VI,Western Visayas,9,latest,2026-09-01,monggo,Monggo,0.5,kg,127.5,63.75,0
+VI,Western Visayas,9,latest,2026-09-01,onion,Red onion,0.5,kg,139.63,69.81,0
+VI,Western Visayas,9,latest,2026-09-01,pork,Pork (kasim),1.0,kg,291.89,291.89,0
+VI,Western Visayas,9,latest,2026-09-01,rice,Rice (regular-milled),10.0,kg,50.81,508.1,0
+VI,Western Visayas,9,latest,2026-09-01,tilapia,Tilapia,1.0,kg,181.11,181.11,0
+VI,Western Visayas,9,latest,2026-09-01,tomato,Tomato,1.0,kg,122.67,122.67,0
+NIR,Negros Island,10,jan_2020,2020-01-01,cabbage,Cabbage,1.0,kg,66.72,66.72,0
+NIR,Negros Island,10,jan_2020,2020-01-01,chicken,Chicken (whole broiler),1.5,kg,165.48,248.22,0
+NIR,Negros Island,10,jan_2020,2020-01-01,eggplant,Eggplant,1.0,kg,71.37,71.37,0
+NIR,Negros Island,10,jan_2020,2020-01-01,eggs,Eggs (medium),12.0,pc,6.83,81.96,0
+NIR,Negros Island,10,jan_2020,2020-01-01,galunggong,Galunggong,1.5,kg,154.28,231.42,0
+NIR,Negros Island,10,jan_2020,2020-01-01,garlic,Garlic (native),0.25,kg,157.19,39.3,1
+NIR,Negros Island,10,jan_2020,2020-01-01,monggo,Monggo,0.5,kg,80.9,40.45,0
+NIR,Negros Island,10,jan_2020,2020-01-01,onion,Red onion,0.5,kg,235.66,117.83,0
+NIR,Negros Island,10,jan_2020,2020-01-01,pork,Pork (kasim),1.0,kg,221.67,221.67,0
+NIR,Negros Island,10,jan_2020,2020-01-01,rice,Rice (regular-milled),10.0,kg,38.9,389.0,0
+NIR,Negros Island,10,jan_2020,2020-01-01,tilapia,Tilapia,1.0,kg,143.69,143.69,0
+NIR,Negros Island,10,jan_2020,2020-01-01,tomato,Tomato,1.0,kg,77.41,77.41,0
+NIR,Negros Island,10,latest,2026-09-01,cabbage,Cabbage,1.0,kg,140.63,140.63,0
+NIR,Negros Island,10,latest,2026-09-01,chicken,Chicken (whole broiler),1.5,kg,203.35,305.02,0
+NIR,Negros Island,10,latest,2026-09-01,eggplant,Eggplant,1.0,kg,93.75,93.75,0
+NIR,Negros Island,10,latest,2026-09-01,eggs,Eggs (medium),12.0,pc,9.9,118.8,0
+NIR,Negros Island,10,latest,2026-09-01,galunggong,Galunggong,1.5,kg,226.04,339.06,0
+NIR,Negros Island,10,latest,2026-09-01,garlic,Garlic (native),0.25,kg,172.76,43.19,1
+NIR,Negros Island,10,latest,2026-09-01,monggo,Monggo,0.5,kg,103.75,51.88,0
+NIR,Negros Island,10,latest,2026-09-01,onion,Red onion,0.5,kg,134.48,67.24,0
+NIR,Negros Island,10,latest,2026-09-01,pork,Pork (kasim),1.0,kg,297.81,297.81,0
+NIR,Negros Island,10,latest,2026-09-01,rice,Rice (regular-milled),10.0,kg,53.85,538.5,0
+NIR,Negros Island,10,latest,2026-09-01,tilapia,Tilapia,1.0,kg,199.72,199.72,0
+NIR,Negros Island,10,latest,2026-09-01,tomato,Tomato,1.0,kg,131.5,131.5,0
+VII,Central Visayas,11,jan_2020,2020-01-01,cabbage,Cabbage,1.0,kg,60.84,60.84,0
+VII,Central Visayas,11,jan_2020,2020-01-01,chicken,Chicken (whole broiler),1.5,kg,182.62,273.93,0
+VII,Central Visayas,11,jan_2020,2020-01-01,eggplant,Eggplant,1.0,kg,83.72,83.72,0
+VII,Central Visayas,11,jan_2020,2020-01-01,eggs,Eggs (medium),12.0,pc,6.91,82.97,1
+VII,Central Visayas,11,jan_2020,2020-01-01,galunggong,Galunggong,1.5,kg,218.91,328.37,0
+VII,Central Visayas,11,jan_2020,2020-01-01,garlic,Garlic (native),0.25,kg,90.91,22.73,0
+VII,Central Visayas,11,jan_2020,2020-01-01,monggo,Monggo,0.5,kg,75.58,37.79,0
+VII,Central Visayas,11,jan_2020,2020-01-01,onion,Red onion,0.5,kg,195.66,97.83,1
+VII,Central Visayas,11,jan_2020,2020-01-01,pork,Pork (kasim),1.0,kg,232.5,232.5,0
+VII,Central Visayas,11,jan_2020,2020-01-01,rice,Rice (regular-milled),10.0,kg,44.19,441.9,0
+VII,Central Visayas,11,jan_2020,2020-01-01,tilapia,Tilapia,1.0,kg,165.0,165.0,0
+VII,Central Visayas,11,jan_2020,2020-01-01,tomato,Tomato,1.0,kg,79.88,79.88,0
+VII,Central Visayas,11,latest,2026-09-01,cabbage,Cabbage,1.0,kg,156.53,156.53,0
+VII,Central Visayas,11,latest,2026-09-01,chicken,Chicken (whole broiler),1.5,kg,210.71,316.06,0
+VII,Central Visayas,11,latest,2026-09-01,eggplant,Eggplant,1.0,kg,114.9,114.9,0
+VII,Central Visayas,11,latest,2026-09-01,eggs,Eggs (medium),12.0,pc,9.11,109.33,1
+VII,Central Visayas,11,latest,2026-09-01,galunggong,Galunggong,1.5,kg,290.0,435.0,0
+VII,Central Visayas,11,latest,2026-09-01,garlic,Garlic (native),0.25,kg,152.18,38.05,0
+VII,Central Visayas,11,latest,2026-09-01,monggo,Monggo,0.5,kg,106.25,53.13,0
+VII,Central Visayas,11,latest,2026-09-01,onion,Red onion,0.5,kg,140.81,70.4,1
+VII,Central Visayas,11,latest,2026-09-01,pork,Pork (kasim),1.0,kg,338.95,338.95,0
+VII,Central Visayas,11,latest,2026-09-01,rice,Rice (regular-milled),10.0,kg,51.61,516.1,0
+VII,Central Visayas,11,latest,2026-09-01,tilapia,Tilapia,1.0,kg,201.25,201.25,0
+VII,Central Visayas,11,latest,2026-09-01,tomato,Tomato,1.0,kg,130.26,130.26,0
+VIII,Eastern Visayas,12,jan_2020,2020-01-01,cabbage,Cabbage,1.0,kg,96.52,96.52,0
+VIII,Eastern Visayas,12,jan_2020,2020-01-01,chicken,Chicken (whole broiler),1.5,kg,154.82,232.23,0
+VIII,Eastern Visayas,12,jan_2020,2020-01-01,eggplant,Eggplant,1.0,kg,68.91,68.91,0
+VIII,Eastern Visayas,12,jan_2020,2020-01-01,eggs,Eggs (medium),12.0,pc,7.4,88.8,0
+VIII,Eastern Visayas,12,jan_2020,2020-01-01,galunggong,Galunggong,1.5,kg,180.8,271.2,0
+VIII,Eastern Visayas,12,jan_2020,2020-01-01,garlic,Garlic (native),0.25,kg,150.65,37.66,0
+VIII,Eastern Visayas,12,jan_2020,2020-01-01,monggo,Monggo,0.5,kg,102.51,51.26,0
+VIII,Eastern Visayas,12,jan_2020,2020-01-01,onion,Red onion,0.5,kg,209.96,104.98,0
+VIII,Eastern Visayas,12,jan_2020,2020-01-01,pork,Pork (kasim),1.0,kg,261.97,261.97,0
+VIII,Eastern Visayas,12,jan_2020,2020-01-01,rice,Rice (regular-milled),10.0,kg,39.49,394.9,0
+VIII,Eastern Visayas,12,jan_2020,2020-01-01,tilapia,Tilapia,1.0,kg,168.98,168.98,0
+VIII,Eastern Visayas,12,jan_2020,2020-01-01,tomato,Tomato,1.0,kg,63.67,63.67,0
+VIII,Eastern Visayas,12,latest,2026-09-01,cabbage,Cabbage,1.0,kg,146.97,146.97,0
+VIII,Eastern Visayas,12,latest,2026-09-01,chicken,Chicken (whole broiler),1.5,kg,207.55,311.33,0
+VIII,Eastern Visayas,12,latest,2026-09-01,eggplant,Eggplant,1.0,kg,100.34,100.34,0
+VIII,Eastern Visayas,12,latest,2026-09-01,eggs,Eggs (medium),12.0,pc,10.28,123.36,0
+VIII,Eastern Visayas,12,latest,2026-09-01,galunggong,Galunggong,1.5,kg,239.2,358.8,0
+VIII,Eastern Visayas,12,latest,2026-09-01,garlic,Garlic (native),0.25,kg,177.56,44.39,0
+VIII,Eastern Visayas,12,latest,2026-09-01,monggo,Monggo,0.5,kg,122.84,61.42,0
+VIII,Eastern Visayas,12,latest,2026-09-01,onion,Red onion,0.5,kg,156.97,78.48,0
+VIII,Eastern Visayas,12,latest,2026-09-01,pork,Pork (kasim),1.0,kg,346.99,346.99,0
+VIII,Eastern Visayas,12,latest,2026-09-01,rice,Rice (regular-milled),10.0,kg,51.05,510.5,0
+VIII,Eastern Visayas,12,latest,2026-09-01,tilapia,Tilapia,1.0,kg,220.06,220.06,0
+VIII,Eastern Visayas,12,latest,2026-09-01,tomato,Tomato,1.0,kg,127.26,127.26,0
+IX,Zamboanga Peninsula,13,jan_2020,2020-01-01,cabbage,Cabbage,1.0,kg,64.95,64.95,0
+IX,Zamboanga Peninsula,13,jan_2020,2020-01-01,chicken,Chicken (whole broiler),1.5,kg,150.05,225.08,0
+IX,Zamboanga Peninsula,13,jan_2020,2020-01-01,eggplant,Eggplant,1.0,kg,54.61,54.61,0
+IX,Zamboanga Peninsula,13,jan_2020,2020-01-01,eggs,Eggs (medium),12.0,pc,6.91,82.92,0
+IX,Zamboanga Peninsula,13,jan_2020,2020-01-01,galunggong,Galunggong,1.5,kg,148.53,222.8,0
+IX,Zamboanga Peninsula,13,jan_2020,2020-01-01,garlic,Garlic (native),0.25,kg,127.5,31.88,0
+IX,Zamboanga Peninsula,13,jan_2020,2020-01-01,monggo,Monggo,0.5,kg,85.22,42.61,0
+IX,Zamboanga Peninsula,13,jan_2020,2020-01-01,onion,Red onion,0.5,kg,199.75,99.88,0
+IX,Zamboanga Peninsula,13,jan_2020,2020-01-01,pork,Pork (kasim),1.0,kg,202.08,202.08,0
+IX,Zamboanga Peninsula,13,jan_2020,2020-01-01,rice,Rice (regular-milled),10.0,kg,42.22,422.2,0
+IX,Zamboanga Peninsula,13,jan_2020,2020-01-01,tilapia,Tilapia,1.0,kg,145.48,145.48,0
+IX,Zamboanga Peninsula,13,jan_2020,2020-01-01,tomato,Tomato,1.0,kg,49.34,49.34,0
+IX,Zamboanga Peninsula,13,latest,2026-09-01,cabbage,Cabbage,1.0,kg,114.81,114.81,0
+IX,Zamboanga Peninsula,13,latest,2026-09-01,chicken,Chicken (whole broiler),1.5,kg,208.48,312.72,0
+IX,Zamboanga Peninsula,13,latest,2026-09-01,eggplant,Eggplant,1.0,kg,71.73,71.73,0
+IX,Zamboanga Peninsula,13,latest,2026-09-01,eggs,Eggs (medium),12.0,pc,9.27,111.24,0
+IX,Zamboanga Peninsula,13,latest,2026-09-01,galunggong,Galunggong,1.5,kg,172.35,258.52,0
+IX,Zamboanga Peninsula,13,latest,2026-09-01,garlic,Garlic (native),0.25,kg,161.43,40.36,0
+IX,Zamboanga Peninsula,13,latest,2026-09-01,monggo,Monggo,0.5,kg,120.79,60.4,0
+IX,Zamboanga Peninsula,13,latest,2026-09-01,onion,Red onion,0.5,kg,163.02,81.51,0
+IX,Zamboanga Peninsula,13,latest,2026-09-01,pork,Pork (kasim),1.0,kg,309.98,309.98,0
+IX,Zamboanga Peninsula,13,latest,2026-09-01,rice,Rice (regular-milled),10.0,kg,50.53,505.3,0
+IX,Zamboanga Peninsula,13,latest,2026-09-01,tilapia,Tilapia,1.0,kg,169.48,169.48,0
+IX,Zamboanga Peninsula,13,latest,2026-09-01,tomato,Tomato,1.0,kg,99.6,99.6,0
+X,Northern Mindanao,14,jan_2020,2020-01-01,cabbage,Cabbage,1.0,kg,64.19,64.19,0
+X,Northern Mindanao,14,jan_2020,2020-01-01,chicken,Chicken (whole broiler),1.5,kg,148.66,222.99,0
+X,Northern Mindanao,14,jan_2020,2020-01-01,eggplant,Eggplant,1.0,kg,55.49,55.49,0
+X,Northern Mindanao,14,jan_2020,2020-01-01,eggs,Eggs (medium),12.0,pc,6.3,75.6,0
+X,Northern Mindanao,14,jan_2020,2020-01-01,galunggong,Galunggong,1.5,kg,131.1,196.65,0
+X,Northern Mindanao,14,jan_2020,2020-01-01,garlic,Garlic (native),0.25,kg,137.4,34.35,0
+X,Northern Mindanao,14,jan_2020,2020-01-01,monggo,Monggo,0.5,kg,81.5,40.75,0
+X,Northern Mindanao,14,jan_2020,2020-01-01,onion,Red onion,0.5,kg,153.65,76.83,0
+X,Northern Mindanao,14,jan_2020,2020-01-01,pork,Pork (kasim),1.0,kg,189.55,189.55,0
+X,Northern Mindanao,14,jan_2020,2020-01-01,rice,Rice (regular-milled),10.0,kg,42.15,421.5,0
+X,Northern Mindanao,14,jan_2020,2020-01-01,tilapia,Tilapia,1.0,kg,143.99,143.99,0
+X,Northern Mindanao,14,jan_2020,2020-01-01,tomato,Tomato,1.0,kg,61.86,61.86,0
+X,Northern Mindanao,14,latest,2026-09-01,cabbage,Cabbage,1.0,kg,108.78,108.78,0
+X,Northern Mindanao,14,latest,2026-09-01,chicken,Chicken (whole broiler),1.5,kg,218.15,327.23,0
+X,Northern Mindanao,14,latest,2026-09-01,eggplant,Eggplant,1.0,kg,78.52,78.52,0
+X,Northern Mindanao,14,latest,2026-09-01,eggs,Eggs (medium),12.0,pc,8.9,106.8,0
+X,Northern Mindanao,14,latest,2026-09-01,galunggong,Galunggong,1.5,kg,215.61,323.42,0
+X,Northern Mindanao,14,latest,2026-09-01,garlic,Garlic (native),0.25,kg,159.08,39.77,0
+X,Northern Mindanao,14,latest,2026-09-01,monggo,Monggo,0.5,kg,131.57,65.78,0
+X,Northern Mindanao,14,latest,2026-09-01,onion,Red onion,0.5,kg,147.9,73.95,0
+X,Northern Mindanao,14,latest,2026-09-01,pork,Pork (kasim),1.0,kg,331.79,331.79,0
+X,Northern Mindanao,14,latest,2026-09-01,rice,Rice (regular-milled),10.0,kg,50.49,504.9,0
+X,Northern Mindanao,14,latest,2026-09-01,tilapia,Tilapia,1.0,kg,193.69,193.69,0
+X,Northern Mindanao,14,latest,2026-09-01,tomato,Tomato,1.0,kg,108.68,108.68,0
+XI,Davao,15,jan_2020,2020-01-01,cabbage,Cabbage,1.0,kg,65.98,65.98,0
+XI,Davao,15,jan_2020,2020-01-01,chicken,Chicken (whole broiler),1.5,kg,161.32,241.98,0
+XI,Davao,15,jan_2020,2020-01-01,eggplant,Eggplant,1.0,kg,47.89,47.89,0
+XI,Davao,15,jan_2020,2020-01-01,eggs,Eggs (medium),12.0,pc,6.2,74.4,0
+XI,Davao,15,jan_2020,2020-01-01,galunggong,Galunggong,1.5,kg,208.21,312.31,0
+XI,Davao,15,jan_2020,2020-01-01,garlic,Garlic (native),0.25,kg,137.62,34.41,0
+XI,Davao,15,jan_2020,2020-01-01,monggo,Monggo,0.5,kg,87.96,43.98,0
+XI,Davao,15,jan_2020,2020-01-01,onion,Red onion,0.5,kg,255.78,127.89,0
+XI,Davao,15,jan_2020,2020-01-01,pork,Pork (kasim),1.0,kg,231.64,231.64,0
+XI,Davao,15,jan_2020,2020-01-01,rice,Rice (regular-milled),10.0,kg,37.05,370.5,0
+XI,Davao,15,jan_2020,2020-01-01,tilapia,Tilapia,1.0,kg,164.46,164.46,0
+XI,Davao,15,jan_2020,2020-01-01,tomato,Tomato,1.0,kg,48.19,48.19,0
+XI,Davao,15,latest,2026-09-01,cabbage,Cabbage,1.0,kg,117.14,117.14,0
+XI,Davao,15,latest,2026-09-01,chicken,Chicken (whole broiler),1.5,kg,197.74,296.61,0
+XI,Davao,15,latest,2026-09-01,eggplant,Eggplant,1.0,kg,80.35,80.35,0
+XI,Davao,15,latest,2026-09-01,eggs,Eggs (medium),12.0,pc,8.56,102.72,0
+XI,Davao,15,latest,2026-09-01,galunggong,Galunggong,1.5,kg,245.21,367.81,0
+XI,Davao,15,latest,2026-09-01,garlic,Garlic (native),0.25,kg,167.79,41.95,0
+XI,Davao,15,latest,2026-09-01,monggo,Monggo,0.5,kg,126.31,63.16,0
+XI,Davao,15,latest,2026-09-01,onion,Red onion,0.5,kg,148.14,74.07,0
+XI,Davao,15,latest,2026-09-01,pork,Pork (kasim),1.0,kg,306.75,306.75,0
+XI,Davao,15,latest,2026-09-01,rice,Rice (regular-milled),10.0,kg,53.05,530.5,0
+XI,Davao,15,latest,2026-09-01,tilapia,Tilapia,1.0,kg,226.9,226.9,0
+XI,Davao,15,latest,2026-09-01,tomato,Tomato,1.0,kg,90.07,90.07,0
+XII,SOCCSKSARGEN,16,jan_2020,2020-01-01,cabbage,Cabbage,1.0,kg,54.68,54.68,0
+XII,SOCCSKSARGEN,16,jan_2020,2020-01-01,chicken,Chicken (whole broiler),1.5,kg,174.45,261.67,0
+XII,SOCCSKSARGEN,16,jan_2020,2020-01-01,eggplant,Eggplant,1.0,kg,41.31,41.31,0
+XII,SOCCSKSARGEN,16,jan_2020,2020-01-01,eggs,Eggs (medium),12.0,pc,5.96,71.52,0
+XII,SOCCSKSARGEN,16,jan_2020,2020-01-01,galunggong,Galunggong,1.5,kg,203.43,305.14,0
+XII,SOCCSKSARGEN,16,jan_2020,2020-01-01,garlic,Garlic (native),0.25,kg,144.51,36.13,0
+XII,SOCCSKSARGEN,16,jan_2020,2020-01-01,monggo,Monggo,0.5,kg,84.52,42.26,0
+XII,SOCCSKSARGEN,16,jan_2020,2020-01-01,onion,Red onion,0.5,kg,241.91,120.95,0
+XII,SOCCSKSARGEN,16,jan_2020,2020-01-01,pork,Pork (kasim),1.0,kg,216.24,216.24,0
+XII,SOCCSKSARGEN,16,jan_2020,2020-01-01,rice,Rice (regular-milled),10.0,kg,35.83,358.3,0
+XII,SOCCSKSARGEN,16,jan_2020,2020-01-01,tilapia,Tilapia,1.0,kg,140.17,140.17,0
+XII,SOCCSKSARGEN,16,jan_2020,2020-01-01,tomato,Tomato,1.0,kg,40.43,40.43,0
+XII,SOCCSKSARGEN,16,latest,2026-09-01,cabbage,Cabbage,1.0,kg,121.32,121.32,0
+XII,SOCCSKSARGEN,16,latest,2026-09-01,chicken,Chicken (whole broiler),1.5,kg,204.69,307.03,0
+XII,SOCCSKSARGEN,16,latest,2026-09-01,eggplant,Eggplant,1.0,kg,67.46,67.46,0
+XII,SOCCSKSARGEN,16,latest,2026-09-01,eggs,Eggs (medium),12.0,pc,8.03,96.36,0
+XII,SOCCSKSARGEN,16,latest,2026-09-01,galunggong,Galunggong,1.5,kg,258.75,388.13,0
+XII,SOCCSKSARGEN,16,latest,2026-09-01,garlic,Garlic (native),0.25,kg,129.71,32.43,0
+XII,SOCCSKSARGEN,16,latest,2026-09-01,monggo,Monggo,0.5,kg,108.44,54.22,0
+XII,SOCCSKSARGEN,16,latest,2026-09-01,onion,Red onion,0.5,kg,147.49,73.75,0
+XII,SOCCSKSARGEN,16,latest,2026-09-01,pork,Pork (kasim),1.0,kg,269.86,269.86,0
+XII,SOCCSKSARGEN,16,latest,2026-09-01,rice,Rice (regular-milled),10.0,kg,48.5,485.0,0
+XII,SOCCSKSARGEN,16,latest,2026-09-01,tilapia,Tilapia,1.0,kg,197.16,197.16,0
+XII,SOCCSKSARGEN,16,latest,2026-09-01,tomato,Tomato,1.0,kg,75.48,75.48,0
+XIII,Caraga,17,jan_2020,2020-01-01,cabbage,Cabbage,1.0,kg,71.02,71.02,0
+XIII,Caraga,17,jan_2020,2020-01-01,chicken,Chicken (whole broiler),1.5,kg,169.91,254.87,0
+XIII,Caraga,17,jan_2020,2020-01-01,eggplant,Eggplant,1.0,kg,57.04,57.04,0
+XIII,Caraga,17,jan_2020,2020-01-01,eggs,Eggs (medium),12.0,pc,6.16,73.92,0
+XIII,Caraga,17,jan_2020,2020-01-01,galunggong,Galunggong,1.5,kg,168.5,252.75,0
+XIII,Caraga,17,jan_2020,2020-01-01,garlic,Garlic (native),0.25,kg,131.25,32.81,0
+XIII,Caraga,17,jan_2020,2020-01-01,monggo,Monggo,0.5,kg,93.49,46.74,0
+XIII,Caraga,17,jan_2020,2020-01-01,onion,Red onion,0.5,kg,224.99,112.5,0
+XIII,Caraga,17,jan_2020,2020-01-01,pork,Pork (kasim),1.0,kg,254.34,254.34,0
+XIII,Caraga,17,jan_2020,2020-01-01,rice,Rice (regular-milled),10.0,kg,39.08,390.8,0
+XIII,Caraga,17,jan_2020,2020-01-01,tilapia,Tilapia,1.0,kg,153.23,153.23,0
+XIII,Caraga,17,jan_2020,2020-01-01,tomato,Tomato,1.0,kg,64.79,64.79,0
+XIII,Caraga,17,latest,2026-09-01,cabbage,Cabbage,1.0,kg,133.65,133.65,0
+XIII,Caraga,17,latest,2026-09-01,chicken,Chicken (whole broiler),1.5,kg,217.13,325.69,0
+XIII,Caraga,17,latest,2026-09-01,eggplant,Eggplant,1.0,kg,92.61,92.61,0
+XIII,Caraga,17,latest,2026-09-01,eggs,Eggs (medium),12.0,pc,9.35,112.2,0
+XIII,Caraga,17,latest,2026-09-01,galunggong,Galunggong,1.5,kg,229.0,343.5,0
+XIII,Caraga,17,latest,2026-09-01,garlic,Garlic (native),0.25,kg,167.5,41.88,0
+XIII,Caraga,17,latest,2026-09-01,monggo,Monggo,0.5,kg,119.38,59.69,0
+XIII,Caraga,17,latest,2026-09-01,onion,Red onion,0.5,kg,142.05,71.03,0
+XIII,Caraga,17,latest,2026-09-01,pork,Pork (kasim),1.0,kg,322.98,322.98,0
+XIII,Caraga,17,latest,2026-09-01,rice,Rice (regular-milled),10.0,kg,51.87,518.7,0
+XIII,Caraga,17,latest,2026-09-01,tilapia,Tilapia,1.0,kg,187.5,187.5,0
+XIII,Caraga,17,latest,2026-09-01,tomato,Tomato,1.0,kg,112.78,112.78,0
+BARMM,BARMM,18,jan_2020,2020-01-01,cabbage,Cabbage,1.0,kg,73.54,73.54,0
+BARMM,BARMM,18,jan_2020,2020-01-01,chicken,Chicken (whole broiler),1.5,kg,196.3,294.45,0
+BARMM,BARMM,18,jan_2020,2020-01-01,eggplant,Eggplant,1.0,kg,55.39,55.39,0
+BARMM,BARMM,18,jan_2020,2020-01-01,eggs,Eggs (medium),12.0,pc,8.29,99.48,0
+BARMM,BARMM,18,jan_2020,2020-01-01,galunggong,Galunggong,1.5,kg,133.76,200.64,0
+BARMM,BARMM,18,jan_2020,2020-01-01,garlic,Garlic (native),0.25,kg,145.06,36.27,0
+BARMM,BARMM,18,jan_2020,2020-01-01,monggo,Monggo,0.5,kg,84.96,42.48,0
+BARMM,BARMM,18,jan_2020,2020-01-01,onion,Red onion,0.5,kg,144.61,72.31,0
+BARMM,BARMM,18,jan_2020,2020-01-01,pork,Pork (kasim),1.0,kg,223.36,223.36,0
+BARMM,BARMM,18,jan_2020,2020-01-01,rice,Rice (regular-milled),10.0,kg,38.14,381.4,0
+BARMM,BARMM,18,jan_2020,2020-01-01,tilapia,Tilapia,1.0,kg,168.81,168.81,0
+BARMM,BARMM,18,jan_2020,2020-01-01,tomato,Tomato,1.0,kg,52.86,52.86,0
+BARMM,BARMM,18,latest,2026-09-01,cabbage,Cabbage,1.0,kg,106.6,106.6,0
+BARMM,BARMM,18,latest,2026-09-01,chicken,Chicken (whole broiler),1.5,kg,214.75,322.13,0
+BARMM,BARMM,18,latest,2026-09-01,eggplant,Eggplant,1.0,kg,73.87,73.87,0
+BARMM,BARMM,18,latest,2026-09-01,eggs,Eggs (medium),12.0,pc,10.53,126.36,0
+BARMM,BARMM,18,latest,2026-09-01,galunggong,Galunggong,1.5,kg,164.17,246.25,0
+BARMM,BARMM,18,latest,2026-09-01,garlic,Garlic (native),0.25,kg,148.28,37.07,0
+BARMM,BARMM,18,latest,2026-09-01,monggo,Monggo,0.5,kg,109.84,54.92,0
+BARMM,BARMM,18,latest,2026-09-01,onion,Red onion,0.5,kg,160.36,80.18,0
+BARMM,BARMM,18,latest,2026-09-01,pork,Pork (kasim),1.0,kg,291.25,291.25,0
+BARMM,BARMM,18,latest,2026-09-01,rice,Rice (regular-milled),10.0,kg,51.6,516.0,0
+BARMM,BARMM,18,latest,2026-09-01,tilapia,Tilapia,1.0,kg,199.02,199.02,0
+BARMM,BARMM,18,latest,2026-09-01,tomato,Tomato,1.0,kg,101.08,101.08,0
